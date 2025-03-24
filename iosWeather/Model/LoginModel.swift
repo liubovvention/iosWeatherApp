@@ -15,7 +15,6 @@ class LoginModel: ObservableObject {
     @Published var password: String = UserDefaults.standard.string(forKey: "password") ?? ""
     
     func handleLogin(username: String, password: String, shouldRememberMe: Bool) -> Bool {
-        // Load user data from the JSON file
         if let userData: [String: String] = UtilityServices.shared.load("user.json") {
             let storedEmail = userData["email"]
             let storedPassword = userData["password"]
