@@ -36,6 +36,8 @@ class LoginModel: ObservableObject {
     }
     
     func logout() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.clearAllCoreData()
         UserDefaults.standard.removeObject(forKey: "username")
         UserDefaults.standard.removeObject(forKey: "password")
         UserDefaults.standard.set(false, forKey: "rememberMe")

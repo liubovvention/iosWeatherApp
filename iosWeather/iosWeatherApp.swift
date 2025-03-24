@@ -10,6 +10,7 @@ import CoreData
 
 @main
 struct iosWeatherApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let persistentContainer = CoreDataManager.shared.persistentContainer
     
     var body: some Scene {
