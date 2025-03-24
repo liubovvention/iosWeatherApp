@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 struct CityWeather: Codable {
     let city: String
     let icon: String
