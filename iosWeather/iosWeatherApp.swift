@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct iosWeatherApp: App {
+    let persistentContainer = CoreDataManager.shared.persistentContainer
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+            WindowGroup {
+                ContentView()
+                    .environment(\.managedObjectContext, persistentContainer.viewContext)
+            }
         }
-    }
 }
